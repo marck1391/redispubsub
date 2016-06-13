@@ -20,11 +20,12 @@ var server = app.listen(port, function(err){
 var io = require('socket.io')(server);
 sub.subscribe('chat')
 io.on('connection', function(socket){
-  socket.on('message', function(message){
-    pub.publish('chat', message)
+  socket.on('message', function(data){
+    console.log(data);
+    pub.publish('chat', JSON.stringify(data))
   })
 
-  sub.on('message', function(channel, message){
-    socket.emit(channel, {message: message, port: port})
+  sub.on('message', function(channel, data){
+    socket.emit(channel, JSON.parse(data))
   })
 })

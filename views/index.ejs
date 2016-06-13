@@ -5,14 +5,15 @@
     <title>Redis Pub/Sub</title>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script type="text/javascript">
-      var server = '//localhost:<%= port %>';
+      var port = <%= port %>;
+      var server = '//localhost:'+port;
       var socket = io();
       console.log('Server:', server)
       socket.on('chat', function(data) {
         console.log('redisMessage:', data.message, 'on port:', data.port);
       })
       function msg(msg){
-        socket.emit('message', msg)
+        socket.emit('message', {message: msg, port: port})
       }
     </script>
   </head>
