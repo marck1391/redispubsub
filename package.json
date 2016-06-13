@@ -1,0 +1,20 @@
+{
+  "name": "asdasdasd",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco Orta <marck1391@gmail.com> (http://m4rk.xyz)",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "redis": "^2.6.1",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
